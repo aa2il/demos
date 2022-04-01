@@ -96,7 +96,7 @@ class Widget(QWidget):
             btn = QPushButton(i)
             btn.setIcon(self.style().standardIcon(getattr(QStyle, i)))
  
-            layout.addWidget(btn, count / colSize, count % colSize)
+            layout.addWidget(btn, int(count/colSize), count % colSize)
             count += 1
              
         self.setLayout(layout)
