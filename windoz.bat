@@ -3,8 +3,10 @@ echo.
 echo Notes about how to run demo programs on Windoze 10
 echo.
 echo Need the following standard Python libraries:
-echo QT5, 
-echo    pip install pyqt5
+echo QT5, calendar for tk, matplotlib, etc.
+echo    pip install pyqt5,tkcalendar,matplotlib
+echo    pip install pyqtgraph
+echo    pip install basemap
 echo.
 echo Need these tools to convert things to standalone executables
 echo    pip install pyinstaller
@@ -27,7 +29,7 @@ echo     dist\hello2.exe
 echo     pyinstaller --onefile hello3.py
 echo     dist\hello3.exe
 echo.
-echo Tic toc tic toc:
+echo Tic-toc tic-toc:
 echo     clock1.py
 echo     clock2.py
 echo     clock3.py
@@ -35,73 +37,44 @@ echo     clock4.py
 echo.
 echo     pyinstaller --onefile clock1.py
 echo     dist\clock1.exe
-
-   entry.py 
-   qicons.py 
-
-   pyinstaller --onefile qicons.py
-   dist\qicons.exe
-   
-7. pip install tkcalendar
-   cal.py    - works fine but not if called calendar.py!!! Ugh!
-
-8. pip install matplotlib
-   These two codes were originally for pyth 2.7 but seem to work in python 3
-   colors1.py
-   colors2.py   - works but need to revisit for python 3
-
-   simple_plot.py                   WORKS GREAT
-
-   THIS ALSO WORKS INSPITE OF THROWING A BUNCH OF ERRORS 
-   pyinstaller --onefile simple_plot.py
-   dist\simple_plot.exe
-
-   basemap.py                       WORKS 
-
-   THIS DOES NOT WORK - PROBLEM WITH BASEMAP
-   pyinstaller --onefile basemap.py
-   dist\basemap.exe
-
-9. splash.py works now but not with same code as linux - revisit later
-
-10. pip install pyqtgraph
-    plotting_examples.py             THEY WORK!!!!
-
-    Unfortuntely, this does NOT work  :-(
-    pyinstaller --onefile plotting_examples.py
-    dist\plotting_exambles.exe
-
-11. cd ..\sound
-    pip install pyaudio
-    This initially failed.  Tried to follow instructions for
-    visual studio c++ in error message ro  --> Ths also failed
-    This seems to work:
-    pip install pipwin
-    pipwin install pyaudio
-    ex1.py               PLAY a WAVE FILE - BOLOCKING - WORKS!
-    ex2.py               PLAY a WAVE FILE - NON-BOLOCKING - WORKS!
-    We're off to a great start!!
-
-   pyinstaller --onefile ex1.py
-   dist\ex1.exe          THIS WORKS!
-
-
-
-
 echo.
-echo pip install scipy levenshtein
+echo     Run Inno Setup Compiler & follow the prompts to create an installer
+echo     This installer works on Windoz 10 & Bottles!
 echo.
-echo To compile - this can take a while:
-echo     Spews a bunch of errors but works any ways
+echo Some other things that are helpful later on
+echo    entry.py 
+echo    qicons.py 
+echo    cal.py    - works fine but not if called calendar.py!!! Ugh!
 echo.
-echo pyinstaller --onefile pyKeyer.py
+echo    pyinstaller --onefile qicons.py
+echo    dist\qicons.exe
 echo.
-echo To run (example):
+echo This fails - need to revisit
+echo    pyinstaller --onefile cal.py
+echo    dist\cal.exe
 echo.
-echo pyKeyer -prac -sidetone -cwt -adjust -wpm 30
-dist\pyKeyer -prac -sidetone -cwt -adjust -wpm 30
+echo These two codes were originally for pyth 2.7 but seem to work in python 3
+echo    colors1.py
+echo    colors2.py   - works but need to revisit for python 3
 echo.
-echo Known issue(s):
-echo 1. Splash not working on windoze (low priority(
+echo Let's try some plotting
+echo    simple_plot.py  
+echo    basemap1.py 
 echo.
-   
+echo This also works inspite of throwing a bunch of errors!
+echo    pyinstaller --onefile simple_plot.py
+echo    dist\simple_plot.exe
+echo.
+echo This does not work - problem with basemap :-(
+echo    pyinstaller --onefile basemap.py
+echo    dist\basemap.exe
+echo.
+echo Splash screen - not quite the same as linux - revisit later
+echo    splash.py 
+echo.
+echo Plotting works! but not the compiler version - revisit later
+echo    plotting_examples.py   
+echo.
+echo    pyinstaller --onefile plotting_examples.py
+echo    dist\plotting_exambles.exe
+echo.
