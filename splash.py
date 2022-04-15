@@ -18,6 +18,7 @@ win.attributes("-topmost", True,'-type', 'splash')
 # set the background image
 #labtk.Label(text='Hey')
 pic = tk.PhotoImage(file='splash.png')
+#pic = tk.PhotoImage(file='splash.jpg')
 lab=tk.Label(win, bg='white', image=pic)
 lab.pack()
 
