@@ -1,12 +1,15 @@
 @echo off
 echo.
 echo Notes about how to run demo programs on Windoze 10
+echo    pip install --upgrade pip
 echo.
 echo Need the following standard Python libraries:
 echo QT5, calendar for tk, matplotlib, etc.
 echo    pip install pyqt5,tkcalendar,matplotlib
 echo    pip install pyqtgraph
 echo    pip install basemap
+echo    pip install pyserial
+echo    pip install pywin32
 echo.
 echo Need these tools to convert things to standalone executables
 echo    pip install pyinstaller
@@ -38,8 +41,8 @@ echo.
 echo     pyinstaller --onefile clock1.py
 echo     dist\clock1.exe
 echo.
-echo     Run Inno Setup Compiler & follow the prompts to create an installer
-echo     This installer works on Windoz 10 & Bottles!
+echo     Run Inno Setup Compiler and follow the prompts to create an installer
+echo     This installer works on Windoz 10 and Bottles!
 echo.
 echo Some other things that are helpful later on
 echo    entry.py 
@@ -78,3 +81,30 @@ echo.
 echo    pyinstaller --onefile plotting_examples.py
 echo    dist\plotting_exambles.exe
 echo.
+echo Get a list of com ports:
+echo Doesn't seem to work on windoz
+echo.
+echo    ports.py
+echo.
+echo    pyinstaller --onefile ports.py 
+echo    dist\ports.exe
+echo.
+echo ---------------------------------------------------------------------
+echo.
+echo Cartopy example - no good since avail libs are not up to date:
+echo.
+echo This doesn't work:
+echo    pip install proj,cartopy
+echo.
+echo There are some pre-built binaries but thse don't work either:
+echo.
+echo Open a browser and download cartopy binary from
+echo       https://www.lfd.uci.edu/~gohlke/pythonlibs/#cartopy
+echo.
+echo Install it:
+echo       pip install ..\..\Downloads\Cartopy~~~~~~.whl
+echo.
+echo This bombs:
+echo  cart1.py
+echo.
+

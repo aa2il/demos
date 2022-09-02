@@ -1,0 +1,31 @@
+#!/bin/csh
+
+# Script to run through various demos to check python installation
+
+sudo apt -y install python3-pip python3-tk python3-cartopy
+pip3 install requirements.txt 
+    
+hello.py
+hello1.py
+hello2.py
+hello3.py
+
+clock1.py
+clock2.py
+clock3.py
+clock4.py
+
+entry.py
+qicons.py
+cal.py
+
+colors1.py
+colors2.py
+splash.py
+ports.py
+
+simple_plot.py
+basemap1.py 
+plotting_examples.py
+
+cart1.py

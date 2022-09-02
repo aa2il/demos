@@ -1,0 +1,11 @@
+# pip3 install -r requirements.txt
+
+pyqt5
+tkcalendar
+matplotlib
+pyqtgraph
+basemap
+pyserial
+
+# For windows
+#pywin32

@@ -1,5 +1,6 @@
 #! /usr/bin/python3
 
+import sys
 import tkinter as tk
 
 # create the main window
@@ -13,7 +14,16 @@ win.title("Splish Splash")
 # set trasparency and make the window stay on top
 # This doesn't work
 #root.attributes('-transparentcolor', 'white', '-topmost', True)
-win.attributes("-topmost", True,'-type', 'splash')
+if sys.platform == "linux" or sys.platform == "linux2":
+    # linux
+    win.attributes("-topmost", True,'-type', 'splash')
+elif sys.platform == "darwin":
+    # OS X
+    print('No support for Mac OS')
+    sys.exit(0)
+elif sys.platform == "win32":
+    # Windows...
+    win.attributes("-topmost", True)
 
 # set the background image
 #labtk.Label(text='Hey')
