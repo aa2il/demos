@@ -1,6 +1,9 @@
 @echo off
 echo.
 echo Notes about how to run demo programs on Windoze 10
+echo These instructions also work on linux for creating stand-alone executables.
+echo (Changes to file names/locations are obvious.)
+echo.
 echo    pip install --upgrade pip
 echo.
 echo Need the following standard Python libraries:
@@ -14,6 +17,8 @@ echo.
 echo Need these tools to convert things to standalone executables
 echo    pip install pyinstaller
 echo    Goto https://jrsoftware.org/isinfo.php and download Inno Setup
+echo.
+echo "-------------------------------------------------------------------"
 echo.
 echo Hello World! in various forms:
 echo    python hello.py      or simply     hello.py
@@ -49,16 +54,22 @@ echo    entry.py
 echo    qicons.py 
 echo    cal.py    - works fine but not if called calendar.py!!! Ugh!
 echo.
+echo Need to test on Windoz but this works on linux
+echo    pyinstaller --onefile entry.py
+echo    dist\entry.exe
+echo.
 echo    pyinstaller --onefile qicons.py
 echo    dist\qicons.exe
 echo.
-echo This fails - need to revisit
+echo This failed on both windoz & linux - should be fixed now - try it on windoz
 echo    pyinstaller --onefile cal.py
 echo    dist\cal.exe
 echo.
 echo These two codes were originally for pyth 2.7 but seem to work in python 3
 echo    colors1.py
 echo    colors2.py   - works but need to revisit for python 3
+echo.
+echo "-------------------------------------------------------------------"
 echo.
 echo Let's try some plotting
 echo    simple_plot.py  
@@ -69,8 +80,9 @@ echo    pyinstaller --onefile simple_plot.py
 echo    dist\simple_plot.exe
 echo.
 echo This does not work - problem with basemap :-(
-echo    pyinstaller --onefile basemap.py
-echo    dist\basemap.exe
+echo I've moved over to cartopy so don't waste time on this
+echo    pyinstaller --onefile basemap1.py
+echo    dist\basemap1.exe
 echo.
 echo Splash screen - not quite the same as linux - revisit later
 echo    splash.py 
@@ -81,8 +93,10 @@ echo.
 echo    pyinstaller --onefile plotting_examples.py
 echo    dist\plotting_exambles.exe
 echo.
+echo "-------------------------------------------------------------------"
+echo.
 echo Get a list of com ports:
-echo Doesn't seem to work on windoz
+echo Doesn't seem to work on windoz but does on linux
 echo.
 echo    ports.py
 echo.
@@ -93,7 +107,7 @@ echo ---------------------------------------------------------------------
 echo.
 echo Cartopy example - no good since avail libs are not up to date:
 echo.
-echo This doesn't work:
+echo This doesn't work on windoz:
 echo    pip install proj,cartopy
 echo.
 echo There are some pre-built binaries but thse don't work either:
@@ -106,5 +120,9 @@ echo       pip install ..\..\Downloads\Cartopy~~~~~~.whl
 echo.
 echo This bombs:
 echo  cart1.py
+echo.
+echo This didn't work on linux - problem was finding background image
+echo It works now
+echo    pyinstaller --onefile cart1.py 
 echo.
 

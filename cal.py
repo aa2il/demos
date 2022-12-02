@@ -14,6 +14,7 @@ else:
     import Tkinter as tk
 import time
 from tkcalendar import *
+import babel.numbers                       # Fixes problem with pyinstaller
 
 ################################################################################
 
