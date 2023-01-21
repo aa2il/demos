@@ -6,6 +6,13 @@ matplotlib
 pyqtgraph
 basemap
 pyserial
+pyautogui
+
+pyinstaller
+
+proj
+cartopy
+shapely
 
 # For windows
 #pywin32

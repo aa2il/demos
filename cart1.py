@@ -22,7 +22,7 @@ def main():
     # Loading the stock image doesn't work in pyinstall but ...
     #    ax.stock_img()
     # ... we can load it directly instead and viola, it works
-    fname='50-natural-earth-1-downsampled.png'
+    fname='../data/50-natural-earth-1-downsampled.png'
     print('fname=',fname)
     img = imread(fname)
     ax.imshow(img, origin='upper', transform=ccrs.PlateCarree(), extent=[-180, 180, -90, 90])

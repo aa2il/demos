@@ -1,12 +1,37 @@
 #! /usr/bin/python3
 
-# List all the serial ports available
+# List all the serial ports available.
+# This works on both windoz and linux
+
+##############################################################################
 
 import sys
-if sys.platform == "win32":
-    import win32
-    
-print('Howdy 0')
+import serial.tools.list_ports as lp
+#from serial.tools.list_ports import comports,grep
+from pprint import pprint
+#if sys.platform == "win32":
+#    import win32
+
+##############################################################################
+
+def find_nano_io_device():
+    ports = lp.grep(NANO_IO_VIDPID)
+    nports=0
+    device=None
+    for port in ports:
+        nports+=1
+        pprint(vars(port))
+        device=port.device
+        print('\nFIND NANO IO DEVICE:',device)
+
+    if nports==0:
+        print('FIND NANO IO DEVICE: Unable to locate nano_io')
+    elif nports>1:
+        print('FIND NANO IO DEVICE: Multiple devices found!')
+
+    return device
+
+print('\nPort finder - lets get started ...\n')
 
 """
 if sys.platform == "linux" or sys.platform == "linux2":
@@ -19,17 +44,30 @@ elif sys.platform == "win32":
     # Windows...
 """    
 
-# This does not load on bottles/win
-#import serial.tools.list_ports as lp
-from serial.tools.list_ports import comports
+NANO_IO_VIDPID='1A86:7523'
 
-print('Howdy 1')
-ports = comports()
+# Look at all ports
+ports = lp.comports()
+print('ports=',ports,'\n')
 
-print('Howdy 2')
-for port, desc, hwid in sorted(ports):
-    print("{}: {} [{}]".format(port, desc, hwid))
+for port in ports:
+    pprint(vars(port))
+    if NANO_IO_VIDPID in port.hwid.upper():
+        print('************** There it is **********************',port.device)
+    #print("port={}: desc={} hwid=[{}]".format(port.device, port.description, port.hwid))
 
+# This should be a direct way to find a specific device    
+print('\nSearching for NANO_IO ...')
+port=find_nano_io_device()
+
+#for port, desc, hwid in sorted(ports):
+#    print("port={}: desc={} hwid=[{}]".format(port, desc, hwid))
+
+# As a test, plug in nano_io and find it
+SERIAL_NANO_IO = '/dev/serial/by-id/usb-1a86_USB2.0-Ser_-if00-port0'
+print('\nNano_io is supposed to be at port',SERIAL_NANO_IO)
+    
+print('Done.\n')
 sys.exit(0)
 
 

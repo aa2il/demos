@@ -29,7 +29,7 @@ echo OLD=$old
 #set old='save45'
 
 rm -f DIFFS
-foreach i (*.py *.bat *.txt run_demos DIFF)
+foreach i (*.py *.bat *.txt run_demos DIFF st99*)
     echo $i
     set n=`diff -w $old/$i $i | wc -l`
     if( !( -e $old/$i ) )then

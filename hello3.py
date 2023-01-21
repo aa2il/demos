@@ -19,7 +19,7 @@ class HelloWindow(QMainWindow):
         QMainWindow.__init__(self)
 
         self.setMinimumSize(QSize(640, 480))    
-        self.setWindowTitle("Hello world - "+version+" Gui") 
+        self.setWindowTitle("Hello world - "+version+" Gui")
 
         centralWidget = QWidget(self)          
         self.setCentralWidget(centralWidget)   

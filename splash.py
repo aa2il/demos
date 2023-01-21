@@ -1,5 +1,7 @@
 #! /usr/bin/python3
 
+# Script to test splash screens
+
 import sys
 import tkinter as tk
 
@@ -23,7 +25,8 @@ elif sys.platform == "darwin":
     sys.exit(0)
 elif sys.platform == "win32":
     # Windows...
-    win.attributes("-topmost", True)
+    #win.attributes("-topmost", True)
+    win.attributes("-topmost", True,'-type', 'splash')
 
 # set the background image
 #labtk.Label(text='Hey')
