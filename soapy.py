@@ -8,7 +8,7 @@ import numpy
 
 #enumerate devices
 results = SoapySDR.Device.enumerate()
-for result in results: print(result)
+for result in results: print('\n',result)
 
 #create device instance
 #args can be user defined or from the enumeration result
@@ -16,7 +16,7 @@ args = dict(driver="rtlsdr")
 sdr = SoapySDR.Device(args)
 
 #query device info
-print('Antennas=',sdr.listAntennas(SOAPY_SDR_RX, 0))
+print('\nAntennas=',sdr.listAntennas(SOAPY_SDR_RX, 0))
 print('Gains=',sdr.listGains(SOAPY_SDR_RX, 0))
 freqs = sdr.getFrequencyRange(SOAPY_SDR_RX, 0)
 for freqRange in freqs:
@@ -36,7 +36,7 @@ buff = numpy.array([0]*1024, numpy.complex64)
 #receive some samples
 for i in range(10):
     sr = sdr.readStream(rxStream, [buff], len(buff))
-    print('No. samps  =',sr.ret)    #num samples or error code
+    print('\nNo. samps  =',sr.ret)    #num samples or error code
     print('Flags      =',sr.flags)  #flags set by receive operation
     print('Time Stamp =',sr.timeNs) #timestamp for receive buffer
     print('Last buffer=',buff)
