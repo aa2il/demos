@@ -42,6 +42,7 @@ print( my_lookuplib.copy_data_in_redis(redis_prefix="CF", redis_instance=r) )
 """
 
 # Now do something with it - this is looking promising !!!
+# BUT it requires user to install redis database so probably not a viable option
 print('\nHey 4')
 r = redis.Redis()
 print('Hey 5')
