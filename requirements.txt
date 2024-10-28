@@ -13,6 +13,7 @@ pyinstaller
 proj
 cartopy
 shapely
+scipy
 
 # For windows
 #pywin32

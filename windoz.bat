@@ -17,17 +17,17 @@ echo "-------------------------------------------------------------------"
 echo.
 echo Hello World! in various forms:
         python hello.py      or simply     hello.py
-        hello1.py
-        hello2.py
+        hello_tk.py
+        hello_qt.py
         hello3.py
 echo.
 echo Convert these to standalone executables:
 echo Like everything else in windoz, this can take some time!
          pyinstaller --onefile hello.py
          dist\hello.exe
-         pyinstaller --onefile hello1.py
+         pyinstaller --onefile hello1_tk.py
          dist\hello1.exe
-         pyinstaller --onefile hello2.py
+         pyinstaller --onefile helloqt.py
          dist\hello2.exe
          pyinstaller --onefile hello3.py
          dist\hello3.exe
@@ -82,8 +82,9 @@ echo I've moved over to cartopy so don't waste time on this
 echo    pyinstaller --onefile basemap1.py
 echo    dist\basemap1.exe
 echo.
-echo Splash screen - not quite the same args as linux but this works
+echo Splash screen - not quite the same args as linux but these work
         splash.py 
+        splash2.py 
 echo.
 echo Plotting works! but not the compiled version - revisit later
         plotting_examples.py   

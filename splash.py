@@ -19,14 +19,13 @@ win.title("Splish Splash")
 if sys.platform == "linux" or sys.platform == "linux2":
     # linux
     win.attributes("-topmost", True,'-type', 'splash')
+elif sys.platform == "win32":
+    # Windows...
+    win.attributes("-topmost", True)
 elif sys.platform == "darwin":
     # OS X
     print('No support for Mac OS')
     sys.exit(0)
-elif sys.platform == "win32":
-    # Windows...
-    #win.attributes("-topmost", True)
-    win.attributes("-topmost", True,'-type', 'splash')
 
 # set the background image
 #labtk.Label(text='Hey')

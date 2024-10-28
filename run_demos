@@ -3,11 +3,11 @@
 # Script to run through various demos to check python installation
 
 sudo apt -y install python3-pip python3-tk python3-cartopy
-pip3 install requirements.txt 
+pip3 install -r requirements.txt 
     
 hello.py
-hello1.py
-hello2.py
+hello_tk.py
+hello_qt.py
 hello3.py
 
 clock1.py
@@ -25,7 +25,9 @@ splash.py
 ports.py
 
 simple_plot.py
-basemap1.py 
+#basemap1.py 
 plotting_examples.py
 
 cart1.py
+
+ports.py
