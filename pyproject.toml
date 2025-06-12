@@ -3,23 +3,18 @@ name = "demos"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
-    "basemap>=1.4.1",
     "cartopy>=0.24.1",
-    "matplotlib>=3.8.4",
+    "matplotlib>=3.10.3",
     "proj>=0.2.0",
     "pyautogui>=0.9.54",
-    "pyinstaller>=6.13.0",
-    "pyqt5>=5.15.11",
+    "pyinstaller>=6.14.1",
+    "pyqt6>=6.9.1",
     "pyqtgraph>=0.13.7",
     "pyserial>=3.5",
+    "pyside6>=6.9.1",
     "scipy>=1.15.3",
-    "shapely>=2.1.0",
+    "shapely>=2.1.1",
     "tkcalendar>=1.6.1",
-]
-
-[tool.uv.workspace]
-members = [
-    "splash",
 ]

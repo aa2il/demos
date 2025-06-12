@@ -1,10 +1,22 @@
+# rm -r .venv/ pyproject.toml .python-version uv.lock
+# uv init
+# uv add -r requirements.txt
+#
+# OLD:
 # pip3 install -r requirements.txt
 
-pyqt5
+#pyqt5
+pyqt6
+# This seems to mostly work except with pyqtgraph under uv.
+# In the past, there was a bug that caused a gui program to hang on final
+# but his seems to be fixed now
+PySide6
+
+pyqtgraph
+
 tkcalendar
 matplotlib
-pyqtgraph
-basemap
+#basemap               # We don't use this anymore so ignore it
 pyserial
 pyautogui
 

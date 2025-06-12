@@ -10,7 +10,7 @@
 #set ROOT="/media/${USER}/pi"
 set ROOT="/media/${USER}/marconi"
 #set ROOT="/media/${USER}/sproul"
-set ROOT="/media/${USER}/sproul-win"
+#set ROOT="/media/${USER}/sproul-win"
 #set ROOT="/media/${USER}/acer"
 #set ROOT="/media/${USER}/cartman"
 if( !(-e $ROOT) )then
@@ -30,7 +30,7 @@ echo OLD=$old
 #set old='save45'
 
 rm -f DIFFS
-foreach i (*.py *.bat *.txt run_demos DIFF st99*)
+foreach i (*.py *.bat *.txt *.md run_demos DIFF st99*)
     echo $i
     set n=`diff -w $old/$i $i | wc -l`
     if( !( -e $old/$i ) )then

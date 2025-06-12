@@ -1,3 +1,88 @@
 # Demos
 
-This is a small collection of scripts used to demonstrate how to accomplish various tasks using python.
+This is a collection of scripts used to demonstrate how to accomplish various tasks using python.  Many of these examples form the basis for the various codes in this respositiory.  These scripts are also useful when python changes (usually for no good reason).
+
+# Installation under Linux using uv:
+
+0. This seems to be the easiest/best solution.  You will need to install uv on your system (once):
+
+        curl -LsSf https://astral.sh/uv/install.sh | sh      
+        rehash     
+
+1. Clone gitub repositories:
+      
+        cd
+        mkdir Python
+        cd Python
+        git clone https://github.com/aa2il/demos
+        git clone https://github.com/aa2il/libs
+        git clone https://github.com/aa2il/data
+
+2. One of the features of uv is that the virtual environment is included in the github repository.  You DO NOT have to do anything since uv will install the environment and required packages the first time you run wclock.
+
+   For the record, here is how I set up the environment:
+
+        cd ~/Python/wclock
+        uv init
+        rm main.py
+        uv add -r requirements.txt
+
+3. NOTE for Raspberry Pi: There seems to be a few bugs in uv on the RPi.
+   
+   First, if we use PySide6, we can use recent versions of Python;
+   BUT, if we use pyqt6, we can't:
+
+        rm -rf uv.lock pyproject.toml .venv .python-version
+        uv init --python 3.11
+
+   or
+
+        uv python pin 3.11
+
+   To get pyqt6 installed, we need to use
+         
+        uv pip install -r requirements.txt
+   
+4. Make sure its executable and set PYTHON PATH so os can find libraries:
+
+        cd ~/Python/wclock
+        chmod +x wclock.py
+
+        Under tcsh:      setenv PYTHONPATH $HOME/Python/libs
+        Under bash:      export PYTHONPATH="$HOME/Python/libs"
+   
+5. Bombs away:
+
+        uv run hello.py
+
+   or, 
+
+        ./hello.py
+
+6. Other useful uv commands:
+
+   - Get a list of available python interpretors:
+   
+          uv python list
+
+   - Install a specific python version:
+   
+          uv python install 3.13
+
+   - Use (pin) a specific version:
+   
+          uv python pin 3.13
+
+   - Add (remove) a package:
+
+          uv add numpy
+
+   - Remove an existing uv installation and start from scratch:
+        
+        rm -rf uv.lock pyproject.toml .venv .python-version
+
+   - Help:
+
+          uv --help
+
+                                                                                                                                           
