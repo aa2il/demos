@@ -113,7 +113,8 @@ class HelloWindow(QMainWindow):
 
         else:
 
-            # This does not work on a headless RPi
+            # This does not work on a headless RPi accessed via VNC
+            # but it is fine if we use ssh -X instead
             msgBox = QMessageBox.question(self,
                                           'Confirmation',
                                           'Do you want to quit?',
