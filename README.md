@@ -104,6 +104,6 @@ You will also need a git client.  I use the command line version available from:
 
 2. Run it - uv will magically rebuild the virtual environment the first time:
 
-        cd wclock
-        uv run wclock.py
+        cd demos
+        uv run hello.py
 
