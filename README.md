@@ -85,4 +85,25 @@ This is a collection of scripts used to demonstrate how to accomplish various ta
 
           uv --help
 
-                                                                                                                                           
+# Installation for Windoz using uv:
+
+0. This couldn't be much easier - and there's no need for a bulky installer!  You will need to install uv on your system by opening a cmd prompt and executing:
+
+        powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+You will also need a git client.  I use the command line version available from:
+
+        https://git-scm.com/downloads/win
+       
+1. Open a cmd prompt and clone gitub wclock, libs and data repositories
+
+        cd %userprofile%
+        mkdir Python
+        cd Python
+        git clone https://github.com/aa2il/demos
+
+2. Run it - uv will magically rebuild the virtual environment the first time:
+
+        cd wclock
+        uv run wclock.py
+
