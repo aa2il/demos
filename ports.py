@@ -51,6 +51,12 @@ ports = lp.comports()
 print('ports=',ports,'\n')
 
 for port in ports:
+    print(port.device)
+    print('\tdesc: ',port.description)
+    print('\thwid: ',port.hwid)
+sys.exit(0)
+
+for port in ports:
     pprint(vars(port))
     if NANO_IO_VIDPID in port.hwid.upper():
         print('************** There it is **********************',port.device)
@@ -74,7 +80,7 @@ sys.exit(0)
 
 
 
-
+ 
 import usb.core
 dev = usb.core.find()
 

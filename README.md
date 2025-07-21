@@ -102,6 +102,12 @@ You will also need a git client.  I use the command line version available from:
         cd Python
         git clone https://github.com/aa2il/demos
 
+   To pull latest changes:
+
+        cd %userprofile%
+        cd Python/demos
+        git pull https://github.com/aa2il/demos
+        
 2. Run it - uv will magically rebuild the virtual environment the first time:
 
         cd demos
