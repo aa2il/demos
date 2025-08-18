@@ -1,10 +1,22 @@
 #!/usr/bin/env -S uv run --script
 #
 # OLD: ! /usr/bin/python3
-#
 ################################################################################
 #
 # A very simple Hello World using Qt
+#
+# This example also manifest the problem with QT not rendering properly on
+# a headless RPi under VNC.  Things to try:
+#
+#   setenv QT_QPA_PLATFORM vnc
+#
+# Valid platform plugins are: offscreen, wayland, linuxfb, vnc,
+#       minimalegl, wayland-egl, eglfs, vkkhrdisplay, minimal, xcb.
+#
+# Nothing found that works :-(
+#
+# BUT -  It does work just fine if we use RDP instead of VNC (tested both
+#   X11 and labwc display managers.)  So the problem appears to be with VNC.
 #
 ################################################################################
 
@@ -100,9 +112,11 @@ class HelloWindow(QMainWindow):
         centralWidget.setLayout(gridLayout)  
         
     def btnCB(self):
-        print('btnCB')
+        print('btnCB - Creating dialog window ...')
 
-        if True:
+        # Trying to debug problems with QT not rendering
+        # properly on a headless RPi
+        if False:
             
             # This works on a headless RPi
             dialog = MyDialog('Really Quit?')
@@ -132,6 +146,7 @@ class HelloWindow(QMainWindow):
 if __name__ == "__main__":
     print('QT Version=',qVersion())
     app = QApplication(sys.argv)
+    #QApplication.setStyle("fusion")         # Cant recall why this is here?!
     mainWin = HelloWindow()
     mainWin.show()
 

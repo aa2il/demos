@@ -1,16 +1,26 @@
-# rm -r .venv/ pyproject.toml .python-version uv.lock
-# uv init
-# uv add -r requirements.txt
+###############################################################################
 #
-# OLD:
-# pip3 install -r requirements.txt
+# Under uv:
+#     rm -r .venv/ pyproject.toml .python-version uv.lock
+#     uv init
+#     uv add -r requirements.txt
+#
+# On RPI, also need:
+#     uv pip install -r requirements.txt
+#
+# On RPi using X11 and VNC, QT does not render everything correctly.
+# I "think" the fix is to add       video=HDMI-A-1:1920x1080M@60D
+# to the end of the line in /boot/firmware/cmdline.txt.   This seems to work
+# but I'm not convinced yet ... keep trying ...      See also demos/hello3.py
+# See also hello3.py in this directory.
+#
+###############################################################################
 
-#pyqt5
 pyqt6
 # This seems to mostly work except with pyqtgraph under uv.
 # In the past, there was a bug that caused a gui program to hang on final
 # but his seems to be fixed now
-PySide6
+#PySide6
 
 pyqtgraph
 

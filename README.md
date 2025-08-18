@@ -9,6 +9,11 @@ This is a collection of scripts used to demonstrate how to accomplish various ta
         curl -LsSf https://astral.sh/uv/install.sh | sh      
         rehash     
 
+which will install uv in ~/.local/bin/uv .   If you want it system wide, try this:
+
+      curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR="/usr/local/bin" sh
+      rehash     
+        
 1. Clone gitub repositories:
       
         cd
@@ -85,6 +90,17 @@ This is a collection of scripts used to demonstrate how to accomplish various ta
 
           uv --help
 
+7. Notes: On RPi using X11 and VNC, QT does not render everything correctly.
+   I "think" the fix is to add
+
+       video=HDMI-A-1:1920x1080M@60D
+
+   to the end of the line in /boot/firmware/cmdline.txt.   This seems to work
+   but I'm not convinced yet ... keep trying ...      See also demos/hello3.py
+   
+   It does, however, work just fine if we use RDP instead of VNC (tested both
+   X11 and labwc display managers.)  So the problem appears to be with VNC.
+          
 # Installation for Windoz using uv:
 
 0. This couldn't be much easier - and there's no need for a bulky installer!  You will need to install uv on your system by opening a cmd prompt and executing:
