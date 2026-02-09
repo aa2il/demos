@@ -1,13 +1,11 @@
 #! /usr/bin/python3
 
-# Example of different ways to use an entry box
+# Example of different ways to use a Qt entry box
 
 import sys
-#from PyQt4.QtCore import *
-#from PyQt4.QtGui import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 
 def window():
    app = QApplication(sys.argv)
@@ -16,7 +14,8 @@ def window():
    e1 = QLineEdit()
    e1.setValidator(QIntValidator())
    e1.setMaxLength(4)
-   e1.setAlignment(Qt.AlignRight)
+   #e1.setAlignment(Qt.AlignRight)          # OLD
+   e1.setAlignment(Qt.AlignmentFlag.AlignRight)
    e1.setFont(QFont("Arial",20))
 	
    e2 = QLineEdit()
@@ -35,7 +34,8 @@ def window():
    flo.addRow("Text changed",e4)
 	
    e5 = QLineEdit()
-   e5.setEchoMode(QLineEdit.Password)
+   #e5.setEchoMode(QLineEdit.Password)          # OLD
+   e5.setEchoMode(QLineEdit.EchoMode.Password)
    flo.addRow("Password",e5)
 	
    e6 = QLineEdit("Hello Python")
@@ -47,7 +47,7 @@ def window():
    win.setWindowTitle("PyQt")
    win.show()
 	
-   sys.exit(app.exec_())
+   sys.exit(app.exec())
 
 def textchanged(text):
    print("contents of text box: "+text)

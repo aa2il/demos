@@ -17,6 +17,7 @@
 ###############################################################################
 
 pyqt6
+#pyqt6==6.7.1           # Need this on RPi
 # This seems to mostly work except with pyqtgraph under uv.
 # In the past, there was a bug that caused a gui program to hang on final
 # but his seems to be fixed now
@@ -36,6 +37,8 @@ proj
 cartopy
 shapely
 scipy
+
+#tkinter_unblur        # Tried this on RPi but didnt help
 
 # For windows
 #pywin32
