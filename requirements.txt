@@ -38,6 +38,9 @@ cartopy
 shapely
 scipy
 
+ephem
+skyfield
+
 #tkinter_unblur        # Tried this on RPi but didnt help
 
 # For windows
