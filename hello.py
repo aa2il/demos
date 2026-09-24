@@ -2,10 +2,12 @@
 
 import sys
 import os
+import psutil
+import shutil
 
 # A very simple Hello World
 
-print("\n\tHello World! - Plain text, no gui\n")
+print("\nHello World! - Plain text, no gui\n")
 
 # Let's see how the various system path discovery mechanisms work
 PYTHON_EXE=os.path.dirname(sys.executable)
@@ -25,3 +27,31 @@ os.chdir('..')
 CWD2=os.getcwd()
 print('Current Working Dir2 =\t',CWD2)
 
+
+# Get disk usage statistics
+print('\nDisk Usage:')
+disk_stats = psutil.disk_usage('/')
+
+print("Total: {:.2f} G".format(disk_stats.total / (2**30)))
+print("Used: {:.2f} G".format(disk_stats.used / (2**30)))
+print("Free: {:.2f} G".format(disk_stats.free / (2**30)))
+
+# Fetching disk usage details
+total, used, free = shutil.disk_usage("/")
+
+print("\nTotal: {:.2f} G".format(total // (2**30)))
+print("Used: {:.2f} G".format(used // (2**30)))
+print("Free: {:.2f} G".format(free // (2**30)))
+
+statvfs = os.statvfs('/')
+
+total=statvfs.f_frsize * statvfs.f_blocks     # Size of filesystem in bytes
+free=statvfs.f_frsize * statvfs.f_bfree      # Actual number of free bytes
+available=statvfs.f_frsize * statvfs.f_bavail     # Number of free bytes that ordinary users
+                                        # are allowed to use (excl. reserved space
+
+print('\nstatvfs=',statvfs)                                        
+print("Total: {:.2f} G".format(total // (2**30)))
+print("Free: {:.2f} G".format(free // (2**30)))
+print("Available: {:.2f} G".format(available // (2**30)))
+                                        
